@@ -12,7 +12,7 @@ export async function findPoetry(inputs: Inputs): Promise<void> {
   const getPoetryPath = await downloadTool(GET_POETRY_URL)
 
   // Run Poetry installation script
-  await exec("python", [getPoetryPath, ...getPoetryInstallArgs(inputs)])
+  await exec("python3", [getPoetryPath, ...getPoetryInstallArgs(inputs)])
 
   // Add Poetry executable to the PATH
   const poetryPath = path.join(os.homedir(), ...getPoetryPathArgs())
